@@ -7,14 +7,15 @@ $pale-orange: hsl(25, 100%, 94%);
 
 //  Neutral
 
-$very-dark-blue: hsl(220, 13%, 13%);
-$dark-grayish-blue: hsl(219, 9%, 45%);
-$grayish-blue: hsl(220, 14%, 75%);
-$light-grayish-blue: hsl(223, 64%, 98%);
+$dark-blue: hsl(209, 23%, 22%);
+$bcg-dark-blue: hsl(207, 26%, 17%);
+$txt-dark-blue: hsl(200, 15%, 8%);
+$dark-gray: hsl(0, 0%, 52%);
+$very-light-gray: hsl(223, 64%, 98%);
 $white: hsl(0, 0%, 100%);
-$black: hsla(0, 0%, 0%, 0.75);
 
 // Fonts
-$font-family: 'Kumbh Sans', sans-serif;
-$regular: 400;
-$bold: 700;
+$font-family: 'Nunito Sans', sans-serif;
+$light: 300;
+$semi-bold: 600;
+$extra-bold: 800;
