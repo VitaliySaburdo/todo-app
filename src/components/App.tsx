@@ -1,7 +1,11 @@
+import { Container } from './Container';
+
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <Container>
+        <h1>Hello</h1>
+      </Container>
     </>
   );
 }
