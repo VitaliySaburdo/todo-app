@@ -11,35 +11,40 @@ The designs were created to the following widths:
 
 ## Colors
 
+### Primary
+
+- Bright Blue: hsl(220, 98%, 61%)
+- Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+
 ### Neutral
 
-- Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
-- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
-- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
-- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
-- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
-- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+### Light Theme
+
+- Very Light Gray: hsl(0, 0%, 98%)
+- Very Light Grayish Blue: hsl(236, 33%, 92%)
+- Light Grayish Blue: hsl(233, 11%, 84%)
+- Dark Grayish Blue: hsl(236, 9%, 61%)
+- Very Dark Grayish Blue: hsl(235, 19%, 35%)
+
+### Dark Theme
+
+- Very Dark Blue: hsl(235, 21%, 11%)
+- Very Dark Desaturated Blue: hsl(235, 24%, 19%)
+- Light Grayish Blue: hsl(234, 39%, 85%)
+- Light Grayish Blue (hover): hsl(236, 33%, 92%)
+- Dark Grayish Blue: hsl(234, 11%, 52%)
+- Very Dark Grayish Blue: hsl(233, 14%, 35%)
+- Very Dark Grayish Blue: hsl(237, 14%, 26%)
 
 ## Typography
 
 ### Body Copy
 
-- Homepage Items: 14px
-- Detail Page: 16px 
+- Font size: 18px
 
-### Fonts
+### Font
 
-- Family: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
-- Weights: 300, 600, 800
-
-## Icons
-
-For the icons, you can use a font icon library. Don't worry if the icons that you choose don't look exactly like they do on the design.
-
-Some suggestions can be found below:
-
-- [Font Awesome](https://fontawesome.com)
-- [IcoMoon](https://icomoon.io)
-- [Ionicons](https://ionicons.com)
+- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+- Weights: 400, 700
 
 > 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma.
