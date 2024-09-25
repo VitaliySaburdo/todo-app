@@ -1,0 +1,17 @@
+@import '../../assets/styles/index.scss';
+
+.main {
+  background-image: url(../../assets/images/bg-desktop-light.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+.title {
+  padding-top: 70px;
+  color: $very-light-grey;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  padding-bottom: 45px;
+}
