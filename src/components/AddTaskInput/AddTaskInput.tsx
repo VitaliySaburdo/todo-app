@@ -15,6 +15,7 @@ interface AddTaskInputProps {
 
 export const AddTaskInput: React.FC<AddTaskInputProps> = ({ addTask }) => {
   const [active, setActive] = useState(false);
+
   const createTodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -25,7 +26,7 @@ export const AddTaskInput: React.FC<AddTaskInputProps> = ({ addTask }) => {
     }
     const task = {
       id: nanoid(6),
-      task: name.value,
+      task: name.value.trim(),
       status: 'active',
     };
     addTask(task);
@@ -40,7 +41,14 @@ export const AddTaskInput: React.FC<AddTaskInputProps> = ({ addTask }) => {
     <>
       <form onSubmit={createTodo} className={style.inputShell}>
         <label htmlFor="task"></label>
-        <input className={style.input} name="task" type="text" />
+        <input
+          className={style.input}
+          name="task"
+          type="text"
+          placeholder={
+            active ? 'Yore task is confirmed' : 'Please enter your task'
+          }
+        />
         <button
           type="submit"
           className={active ? `${style.btn} ${style.active}` : style.btn}

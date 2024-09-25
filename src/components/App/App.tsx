@@ -1,13 +1,9 @@
 import { useState } from 'react';
 import { AddTaskInput } from '../AddTaskInput';
 import { Container } from '../Container';
+import { TaskList } from '../TaskList';
+import { Task } from '../../types';
 import style from './App.module.scss';
-
-interface Task {
-  id: string;
-  task: string;
-  status: string;
-}
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -23,6 +19,7 @@ function App() {
           <Container>
             <h1 className={style.title}>TODO</h1>
             <AddTaskInput addTask={createTask} />
+            <TaskList tasks={tasks} />
           </Container>
         </section>
       </main>
