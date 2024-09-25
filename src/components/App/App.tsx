@@ -15,7 +15,7 @@ function App() {
   const createTask = (task: Task) => {
     setTasks([...tasks, task]);
   };
-  console.log(tasks);
+
   return (
     <>
       <main className={style.main}>
