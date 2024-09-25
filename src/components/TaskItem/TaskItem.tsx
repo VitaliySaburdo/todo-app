@@ -8,6 +8,7 @@ interface TaskItemProps {
   task: string;
   status: string;
   onDeleteBtn: (id: string) => void;
+  changeStatus: (id: string, status: string) => void;
 }
 
 export const TaskItem: React.FC<TaskItemProps> = ({
@@ -15,15 +16,17 @@ export const TaskItem: React.FC<TaskItemProps> = ({
   task,
   status: initialStatus,
   onDeleteBtn,
+  changeStatus,
 }) => {
   const [status, setStatus] = useState(initialStatus);
 
   const handleClick = () => {
-    setStatus((prevState: string) =>
-      prevState === 'active' ? 'complete' : 'active'
-    );
+    setStatus((prevState) => {
+      const newStatus = prevState === 'active' ? 'completed' : 'active';
+      changeStatus(id, newStatus);
+      return newStatus;
+    });
   };
-
   const handleOnDelete = () => {
     onDeleteBtn(id);
   };

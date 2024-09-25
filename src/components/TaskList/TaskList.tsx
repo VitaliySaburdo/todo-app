@@ -5,9 +5,14 @@ import style from './TaskList.module.scss';
 interface TaskListProps {
   tasks: Task[];
   onDeleteBtn: (id: string) => void;
+  changeStatus: (id: string, status: string) => void;
 }
 
-export const TaskList: React.FC<TaskListProps> = ({ tasks, onDeleteBtn }) => {
+export const TaskList: React.FC<TaskListProps> = ({
+  tasks,
+  onDeleteBtn,
+  changeStatus,
+}) => {
   return (
     <>
       <ul className={style.list}>
@@ -18,6 +23,7 @@ export const TaskList: React.FC<TaskListProps> = ({ tasks, onDeleteBtn }) => {
               status={status}
               id={id}
               onDeleteBtn={onDeleteBtn}
+              changeStatus={changeStatus}
             />
           </li>
         ))}
