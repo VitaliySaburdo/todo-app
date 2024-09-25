@@ -12,6 +12,11 @@ function App() {
     setTasks([...tasks, task]);
   };
 
+  const handleOnDeleteBtn = (id: string) => {
+    const newTasks = tasks.filter((item) => item.id !== id);
+    setTasks(newTasks);
+  };
+
   return (
     <>
       <main className={style.main}>
@@ -19,7 +24,7 @@ function App() {
           <Container>
             <h1 className={style.title}>TODO</h1>
             <AddTaskInput addTask={createTask} />
-            <TaskList tasks={tasks} />
+            <TaskList tasks={tasks} onDeleteBtn={handleOnDeleteBtn} />
           </Container>
         </section>
       </main>
