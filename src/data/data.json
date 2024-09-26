@@ -1,0 +1,22 @@
+[
+  {
+    "id": "VVduVo2bVEUg3dCwevusi",
+    "task": "learn HTML, CSS",
+    "status": "completed"
+  },
+  {
+    "id": "Cumds558fSWqHLtyms9JK",
+    "task": "learn JS, React",
+    "status": "completed"
+  },
+  {
+    "id": "ufhKSbiBo99OLcLbcIiu9",
+    "task": "Create 10 pet-projects",
+    "status": "completed"
+  },
+  {
+    "id": "bMxJigC6kj1QlaaJIgRyf",
+    "task": "Get a job",
+    "status": "active"
+  }
+]

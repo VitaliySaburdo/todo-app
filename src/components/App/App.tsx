@@ -4,11 +4,12 @@ import { Container } from '../Container';
 import { TaskList } from '../TaskList';
 import { Task } from '../../types';
 import { FilterBar } from '../FilterBar';
+import data from '../../data/data.json';
 import style from './App.module.scss';
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [filteredTasks, setFilteredTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(data);
+  const [filteredTasks, setFilteredTasks] = useState<Task[]>(data);
 
   const createTask = (task: Task) => {
     setTasks([...tasks, task]);
