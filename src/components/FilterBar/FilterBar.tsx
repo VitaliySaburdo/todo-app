@@ -1,16 +1,23 @@
+import { Task } from '../../types';
 import style from './FilterBar.module.scss';
 
 interface FilterBarProps {
   onFilter: (status: string) => void;
+  onClearCompleted: (status: string) => void;
+  count: number;
 }
 
-export const FilterBar: React.FC<FilterBarProps> = ({ onFilter }) => {
+export const FilterBar: React.FC<FilterBarProps> = ({
+  onFilter,
+  onClearCompleted,
+  count,
+}) => {
   const handleOnFilter = (status: string) => {
     onFilter(status);
   };
   return (
     <div className={style.item}>
-      <p className={style.txt}>items left</p>
+      <p className={style.txt}>items left {count}</p>
       <ul className={style.filterList}>
         <li>
           <button
@@ -37,7 +44,14 @@ export const FilterBar: React.FC<FilterBarProps> = ({ onFilter }) => {
           </button>
         </li>
         <li>
-          <button className={style.filterBtn}>Clear Completed</button>
+          <button
+            onClick={() => {
+              onClearCompleted('completed');
+            }}
+            className={style.filterBtn}
+          >
+            Clear Completed
+          </button>
         </li>
       </ul>
     </div>

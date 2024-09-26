@@ -11,6 +11,14 @@ function App() {
   const [tasks, setTasks] = useState<Task[]>(data);
   const [filteredTasks, setFilteredTasks] = useState<Task[]>(data);
 
+  let count = 0;
+
+  filteredTasks.forEach((task) => {
+    if (task.status === 'active') {
+      count += 1;
+    }
+  });
+
   const createTask = (task: Task) => {
     setTasks([...tasks, task]);
     setFilteredTasks((prevTasks) => [...prevTasks, task]);
@@ -39,6 +47,12 @@ function App() {
     }
   };
 
+  const handleOnClearCompleted = (status: string) => {
+    const newTasks = tasks.filter((item) => item.status !== status);
+    setTasks(newTasks);
+    setFilteredTasks(newTasks);
+  };
+
   return (
     <>
       <main className={style.main}>
@@ -52,7 +66,11 @@ function App() {
                 onDeleteBtn={handleOnDeleteBtn}
                 changeStatus={handleOnChangeStatus}
               />
-              <FilterBar onFilter={handleOnFilter} />
+              <FilterBar
+                onFilter={handleOnFilter}
+                onClearCompleted={handleOnClearCompleted}
+                count={count}
+              />
             </div>
           </Container>
         </section>

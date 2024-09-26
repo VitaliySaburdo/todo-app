@@ -1,13 +1,8 @@
-import { nanoid } from 'nanoid';
-import style from './AddTaskInput.module.scss';
 import { useState } from 'react';
+import { nanoid } from 'nanoid';
 import Check from '../../assets/images/icon-check.svg?react';
-
-interface Task {
-  id: string;
-  task: string;
-  status: string;
-}
+import { Task } from '../../types';
+import style from './AddTaskInput.module.scss';
 
 interface AddTaskInputProps {
   addTask: (task: Task) => void;
