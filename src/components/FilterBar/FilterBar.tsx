@@ -4,20 +4,20 @@ import style from './FilterBar.module.scss';
 interface FilterBarProps {
   onFilter: (status: string) => void;
   onClearCompleted: (status: string) => void;
-  count: number;
+  activeTaskCount: number;
 }
 
 export const FilterBar: React.FC<FilterBarProps> = ({
   onFilter,
   onClearCompleted,
-  count,
+  activeTaskCount,
 }) => {
   const handleOnFilter = (status: string) => {
     onFilter(status);
   };
   return (
     <div className={style.item}>
-      <p className={style.txt}>items left {count}</p>
+      <p className={style.txt}>items left {activeTaskCount}</p>
       <ul className={style.filterList}>
         <li>
           <button

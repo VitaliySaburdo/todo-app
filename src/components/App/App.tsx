@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { AddTaskInput } from '../AddTaskInput';
 import { Container } from '../Container';
 import { TaskList } from '../TaskList';
@@ -9,25 +9,27 @@ import style from './App.module.scss';
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>(data);
-  const [filteredTasks, setFilteredTasks] = useState<Task[]>(data);
+  const [filterStatus, setFilterStatus] = useState<string>('all');
 
-  let count = 0;
+  const activeTaskCount = useMemo(
+    () => tasks.filter((task) => task.status === 'active').length,
+    [tasks]
+  );
 
-  filteredTasks.forEach((task) => {
-    if (task.status === 'active') {
-      count += 1;
+  const filteredTasks = useMemo(() => {
+    if (filterStatus === 'all') {
+      return tasks;
     }
-  });
+    return tasks.filter((task) => task.status === filterStatus);
+  }, [tasks, filterStatus]);
 
   const createTask = (task: Task) => {
-    setTasks([...tasks, task]);
-    setFilteredTasks((prevTasks) => [...prevTasks, task]);
+    setTasks((prevTasks) => [...prevTasks, task]);
   };
 
   const handleOnDeleteBtn = (id: string) => {
     const newTasks = tasks.filter((item) => item.id !== id);
     setTasks(newTasks);
-    setFilteredTasks(newTasks);
   };
 
   const handleOnChangeStatus = (id: string, status: string) => {
@@ -35,22 +37,15 @@ function App() {
       task.id === id ? { ...task, status } : task
     );
     setTasks(newTasks);
-    setFilteredTasks(newTasks);
   };
 
   const handleOnFilter = (status: string) => {
-    if (status === 'all') {
-      setFilteredTasks(tasks);
-    } else {
-      const newTasks = tasks.filter((task) => task.status === status);
-      setFilteredTasks(newTasks);
-    }
+    setFilterStatus(status);
   };
 
-  const handleOnClearCompleted = (status: string) => {
-    const newTasks = tasks.filter((item) => item.status !== status);
+  const handleOnClearCompleted = () => {
+    const newTasks = tasks.filter((task) => task.status !== 'completed');
     setTasks(newTasks);
-    setFilteredTasks(newTasks);
   };
 
   return (
@@ -69,7 +64,7 @@ function App() {
               <FilterBar
                 onFilter={handleOnFilter}
                 onClearCompleted={handleOnClearCompleted}
-                count={count}
+                activeTaskCount={activeTaskCount}
               />
             </div>
           </Container>
