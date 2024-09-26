@@ -8,7 +8,9 @@ interface themeStoreProps {
 export const useThemeStore = create<themeStoreProps>((set) => ({
   theme: 'light',
   changeTheme: () =>
-    set((state) => ({
-      theme: state.theme === 'light' ? 'dark' : 'light',
-    })),
+    set((state) => {
+      const newTheme = state.theme === 'light' ? 'dark' : 'light';
+      document.body.className = newTheme;
+      return { theme: newTheme };
+    }),
 }));
