@@ -1,4 +1,3 @@
-import { Task } from '../../types';
 import style from './FilterBar.module.scss';
 
 interface FilterBarProps {

@@ -1,15 +1,21 @@
 import { useState, useMemo } from 'react';
+import { useThemeStore } from '../../store/themeStore';
 import { AddTaskInput } from '../AddTaskInput';
 import { Container } from '../Container';
 import { TaskList } from '../TaskList';
 import { Task } from '../../types';
 import { FilterBar } from '../FilterBar';
+import Sun from '../../assets/images/icon-sun.svg?react';
+import Moon from '../../assets/images/icon-moon.svg?react';
+import bgLight from '../../assets/images/bg-desktop-light.jpg';
+import bgDark from '../../assets/images/bg-desktop-dark.jpg';
 import data from '../../data/data.json';
 import style from './App.module.scss';
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>(data);
   const [filterStatus, setFilterStatus] = useState<string>('all');
+  const { theme, changeTheme } = useThemeStore();
 
   const activeTaskCount = useMemo(
     () => tasks.filter((task) => task.status === 'active').length,
@@ -50,10 +56,20 @@ function App() {
 
   return (
     <>
-      <main className={style.main}>
+      <main
+        className={style.main}
+        style={{
+          backgroundImage: `url(${theme === 'light' ? bgLight : bgDark})`,
+        }}
+      >
         <section>
           <Container>
-            <h1 className={style.title}>TODO</h1>
+            <div className={style.titleWrapper}>
+              <h1 className={style.title}>TODO</h1>
+              <button onClick={() => changeTheme()} className={style.themeBtn}>
+                {theme === 'light' ? <Moon /> : <Sun />}
+              </button>
+            </div>
             <AddTaskInput addTask={createTask} />
             <div className={style.box}>
               <TaskList

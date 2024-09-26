@@ -1,7 +1,7 @@
 @import '../../assets/styles/index.scss';
 
 .main {
-  background-image: url(../../assets/images/bg-desktop-light.jpg);
+  // background-image: url(../../assets/images/bg-desktop-light.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9,10 +9,15 @@
 }
 
 .title {
-  padding-top: 70px;
   color: $very-light-grey;
   font-size: 2rem;
   letter-spacing: 0.5rem;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 70px;
   padding-bottom: 45px;
 }
 
@@ -20,4 +25,33 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 0px 32px -14px rgba(0, 0, 0, 0.54);
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.themeBtn {
+  display: flex;
+  padding: 0;
+  font-size: 14px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  svg {
+    animation: fadeIn 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
