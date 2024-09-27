@@ -16,6 +16,9 @@
   &:focus {
     outline: none;
   }
+  &.dark {
+    background-color: $very-dark-grayish-blue;
+  }
 }
 
 .btn {

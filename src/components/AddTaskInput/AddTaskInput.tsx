@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { useThemeStore } from '../../store/themeStore';
 import { nanoid } from 'nanoid';
-import Check from '../../assets/images/icon-check.svg?react';
 import { Task } from '../../types';
+import Check from '../../assets/images/icon-check.svg?react';
 import style from './AddTaskInput.module.scss';
 
 interface AddTaskInputProps {
@@ -10,6 +11,7 @@ interface AddTaskInputProps {
 
 export const AddTaskInput: React.FC<AddTaskInputProps> = ({ addTask }) => {
   const [active, setActive] = useState(false);
+  const { theme } = useThemeStore();
 
   const createTodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ export const AddTaskInput: React.FC<AddTaskInputProps> = ({ addTask }) => {
       <form onSubmit={createTodo} className={style.inputShell}>
         <label htmlFor="task"></label>
         <input
-          className={style.input}
+          className={`${style.input} ${style[theme]}`}
           name="task"
           type="text"
           placeholder={
