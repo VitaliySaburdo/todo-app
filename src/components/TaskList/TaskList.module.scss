@@ -18,4 +18,9 @@
   border: none;
   background-color: $very-light-grey;
   border-bottom: 1px solid $very-light-grayish-blue;
+
+  &.dark {
+    background-color: $very-dark-grayish-dark;
+    border-bottom: 1px solid $very-dark-grayish-blue;
+  }
 }

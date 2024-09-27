@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useThemeStore } from '../../store/themeStore';
 import Check from '../../assets/images/icon-check.svg?react';
 import Cross from '../../assets/images/icon-cross.svg?react';
 import style from './TaskItem.module.scss';
@@ -19,6 +20,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({
   changeStatus,
 }) => {
   const [status, setStatus] = useState(initialStatus);
+  const { theme } = useThemeStore();
 
   const handleClick = () => {
     setStatus((prevState) => {
@@ -36,7 +38,9 @@ export const TaskItem: React.FC<TaskItemProps> = ({
       <button
         onClick={handleClick}
         className={
-          status === 'active' ? style.btn : `${style.btn} ${style.active}`
+          status === 'active'
+            ? `${style.btn} ${style.active}`
+            : `${style.btn} ${style[theme]}`
         }
       >
         <Check />

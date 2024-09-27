@@ -17,7 +17,7 @@
     outline: none;
   }
   &.dark {
-    background-color: $very-dark-grayish-blue;
+    background-color: $very-dark-grayish-dark;
   }
 }
 
@@ -44,6 +44,10 @@
     background-color: $very-light-grey;
     border: 2px solid $very-light-grayish-blue;
     transition: border-color 0.3s ease;
+  }
+
+  &.dark::before {
+    background-color: $very-dark-grayish-dark;
   }
 
   &:hover {

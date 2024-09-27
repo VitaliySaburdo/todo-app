@@ -1,3 +1,4 @@
+import { useThemeStore } from '../../store/themeStore';
 import { Task } from '../../types';
 import { TaskItem } from '../TaskItem';
 import style from './TaskList.module.scss';
@@ -13,11 +14,13 @@ export const TaskList: React.FC<TaskListProps> = ({
   onDeleteBtn,
   changeStatus,
 }) => {
+  const { theme } = useThemeStore();
+
   return (
     <>
       <ul className={style.list}>
         {tasks.map(({ id, task, status }) => (
-          <li className={style.item} key={id}>
+          <li className={`${style.item} ${style[theme]}`} key={id}>
             <TaskItem
               task={task}
               status={status}

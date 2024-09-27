@@ -48,7 +48,11 @@ export const AddTaskInput: React.FC<AddTaskInputProps> = ({ addTask }) => {
         />
         <button
           type="submit"
-          className={active ? `${style.btn} ${style.active}` : style.btn}
+          className={
+            active
+              ? `${style.btn} ${style.active}`
+              : `${style.btn} ${style[theme]}`
+          }
         >
           <Check />
         </button>
