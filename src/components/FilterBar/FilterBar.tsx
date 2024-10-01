@@ -59,6 +59,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <button
             onClick={() => {
               onClearCompleted('completed');
+              handleOnFilter('all');
             }}
             className={`${style.filterBtn} ${style[theme]}`}
           >

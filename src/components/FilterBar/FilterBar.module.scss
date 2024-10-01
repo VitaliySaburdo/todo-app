@@ -46,6 +46,9 @@
   &:hover {
     color: $very-dark-grayish-blue;
   }
+  &.active.dark {
+    color: $bright-blue;
+  }
   &.active {
     color: $bright-blue;
   }
