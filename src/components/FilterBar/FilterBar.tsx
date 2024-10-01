@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { useThemeStore } from '../../store/themeStore';
 import style from './FilterBar.module.scss';
 
 interface FilterBarProps {
@@ -11,17 +13,24 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   onClearCompleted,
   activeTaskCount,
 }) => {
+  const [active, setActive] = useState('all');
+  const { theme } = useThemeStore();
+
   const handleOnFilter = (status: string) => {
     onFilter(status);
+    setActive(status);
   };
+
   return (
-    <div className={style.item}>
+    <div className={`${style.wrapper} ${style[theme]}`}>
       <p className={style.txt}>items left {activeTaskCount}</p>
       <ul className={style.filterList}>
         <li>
           <button
             onClick={() => handleOnFilter('all')}
-            className={style.filterBtn}
+            className={`${style.filterBtn} ${style[theme]} ${
+              active === 'all' ? style.active : ''
+            }`}
           >
             All
           </button>
@@ -29,7 +38,9 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         <li>
           <button
             onClick={() => handleOnFilter('active')}
-            className={style.filterBtn}
+            className={`${style.filterBtn} ${style[theme]} ${
+              active === 'active' ? style.active : ''
+            }`}
           >
             Active
           </button>
@@ -37,7 +48,9 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         <li>
           <button
             onClick={() => handleOnFilter('completed')}
-            className={style.filterBtn}
+            className={`${style.filterBtn} ${style[theme]} ${
+              active === 'completed' ? style.active : ''
+            }`}
           >
             Completed
           </button>
@@ -47,7 +60,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             onClick={() => {
               onClearCompleted('completed');
             }}
-            className={style.filterBtn}
+            className={`${style.filterBtn} ${style[theme]}`}
           >
             Clear Completed
           </button>

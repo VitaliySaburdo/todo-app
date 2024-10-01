@@ -1,6 +1,6 @@
 @import '../../assets/styles/index.scss';
 
-.item {
+.wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +11,10 @@
   height: 60px;
   border: none;
   background-color: $very-light-grey;
+
+  &.dark {
+    background-color: $very-dark-grayish-dark;
+  }
 }
 
 .txt {
@@ -34,7 +38,18 @@
   display: flex;
   padding: 0;
   font-size: 14px;
+  font-weight: 800;
+  color: $dark-grayish-blue;
   border: none;
   background-color: transparent;
   cursor: pointer;
+  &:hover {
+    color: $very-dark-grayish-blue;
+  }
+  &.active {
+    color: $bright-blue;
+  }
+  &.dark {
+    color: $light-grayish-blue;
+  }
 }
