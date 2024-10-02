@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useThemeStore } from '../../store/themeStore';
 import { nanoid } from 'nanoid';
 import { Task } from '../../types';
-import Check from '../../assets/images/icon-check.svg?react';
+import { Button } from '../Button';
 import style from './AddTaskInput.module.scss';
 
 interface AddTaskInputProps {
@@ -46,16 +46,7 @@ export const AddTaskInput: React.FC<AddTaskInputProps> = ({ addTask }) => {
             active ? 'Yore task is confirmed' : 'Please enter your task'
           }
         />
-        <button
-          type="submit"
-          className={
-            active
-              ? `${style.btn} ${style.active}`
-              : `${style.btn} ${style[theme]}`
-          }
-        >
-          <Check />
-        </button>
+        <Button isActive={active} theme={theme} />
       </form>
     </>
   );

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useThemeStore } from '../../store/themeStore';
-import Check from '../../assets/images/icon-check.svg?react';
 import Cross from '../../assets/images/icon-cross.svg?react';
 import style from './TaskItem.module.scss';
+import { Button } from '../Button';
 
 interface TaskItemProps {
   id: string;
@@ -35,16 +35,11 @@ export const TaskItem: React.FC<TaskItemProps> = ({
 
   return (
     <>
-      <button
+      <Button
         onClick={handleClick}
-        className={
-          status === 'active'
-            ? `${style.btn} ${style.active}`
-            : `${style.btn} ${style[theme]}`
-        }
-      >
-        <Check />
-      </button>
+        isActive={status === 'active'}
+        theme={theme}
+      />
       <p
         className={
           status === 'active' ? style.task : `${style.task} ${style.complete}`
