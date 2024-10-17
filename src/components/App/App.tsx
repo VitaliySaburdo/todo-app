@@ -84,10 +84,10 @@ function App() {
                 activeTaskCount={activeTaskCount}
               />
             </div>
+            <div className={`${style.item} ${style[theme]}`}>
+              <NavBar active={filterStatus} handleOnFilter={handleOnFilter} />
+            </div>
           </Container>
-          <div>
-            <NavBar active={filterStatus} handleOnFilter={handleOnFilter} />
-          </div>
         </section>
       </main>
     </>

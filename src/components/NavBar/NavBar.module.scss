@@ -1,5 +1,10 @@
 @import '../../assets/styles/index.scss';
 
+.navBar {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .filterList {
   display: flex;
   gap: 15px;

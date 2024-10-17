@@ -12,7 +12,7 @@ export const NavBar: React.FC<NavBarProps> = ({ active, handleOnFilter }) => {
   return (
     <>
       {' '}
-      <nav>
+      <nav className={style.navBar}>
         <ul className={style.filterList}>
           <li>
             {' '}
