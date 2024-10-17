@@ -1,7 +1,10 @@
 @import '../../assets/styles/index.scss';
 
 .task {
-  font-size: 16px;
+  font-size: 12px;
+  @include mq(desk) {
+    font-size: 16px;
+  }
   &.complete {
     text-decoration: line-through;
   }
@@ -13,4 +16,12 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  svg {
+    width: 12px;
+    height: 12px;
+    @include mq(desk) {
+      width: 18px;
+      height: 18px;
+    }
+  }
 }
