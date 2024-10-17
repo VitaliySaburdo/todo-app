@@ -11,6 +11,7 @@ import bgLight from '../../assets/images/bg-desktop-light.jpg';
 import bgDark from '../../assets/images/bg-desktop-dark.jpg';
 import data from '../../data/data.json';
 import style from './App.module.scss';
+import { NavBar } from '../NavBar';
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>(data);
@@ -84,6 +85,9 @@ function App() {
               />
             </div>
           </Container>
+          <div>
+            <NavBar active={filterStatus} handleOnFilter={handleOnFilter} />
+          </div>
         </section>
       </main>
     </>

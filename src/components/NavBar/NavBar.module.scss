@@ -1,0 +1,29 @@
+@import '../../assets/styles/index.scss';
+
+.filterList {
+  display: flex;
+  gap: 15px;
+}
+
+.filterBtn {
+  display: flex;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 800;
+  color: $dark-grayish-blue;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    color: $very-dark-grayish-blue;
+  }
+  &.active.dark {
+    color: $bright-blue;
+  }
+  &.active {
+    color: $bright-blue;
+  }
+  &.dark {
+    color: $light-grayish-blue;
+  }
+}

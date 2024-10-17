@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useThemeStore } from '../../store/themeStore';
+import { NavBar } from '../NavBar';
 import style from './FilterBar.module.scss';
 
 interface FilterBarProps {
@@ -22,51 +23,22 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   };
 
   return (
-    <div className={`${style.wrapper} ${style[theme]}`}>
-      <p className={style.txt}>items left {activeTaskCount}</p>
-      <ul className={style.filterList}>
-        <li>
-          <button
-            onClick={() => handleOnFilter('all')}
-            className={`${style.filterBtn} ${style[theme]} ${
-              active === 'all' ? style.active : ''
-            }`}
-          >
-            All
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => handleOnFilter('active')}
-            className={`${style.filterBtn} ${style[theme]} ${
-              active === 'active' ? style.active : ''
-            }`}
-          >
-            Active
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => handleOnFilter('completed')}
-            className={`${style.filterBtn} ${style[theme]} ${
-              active === 'completed' ? style.active : ''
-            }`}
-          >
-            Completed
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              onClearCompleted('completed');
-              handleOnFilter('all');
-            }}
-            className={`${style.filterBtn} ${style[theme]}`}
-          >
-            Clear Completed
-          </button>
-        </li>
-      </ul>
-    </div>
+    <>
+      <div className={`${style.wrapper} ${style[theme]}`}>
+        <p className={style.txt}>items left {activeTaskCount}</p>
+        <div className={style.block}>
+          <NavBar active={active} handleOnFilter={handleOnFilter} />
+        </div>
+        <button
+          onClick={() => {
+            onClearCompleted('completed');
+            handleOnFilter('all');
+          }}
+          className={`${style.filterBtn} ${style[theme]}`}
+        >
+          Clear Completed
+        </button>
+      </div>
+    </>
   );
 };
