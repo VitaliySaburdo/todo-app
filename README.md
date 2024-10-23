@@ -1,6 +1,6 @@
 # Todo app solution
 
-![Design preview for the Todo app coding](./design/desktop-preview.jpg)
+![Design preview for the Todo app coding](./src/assets/images/desktop-preview.jpg)
 
 ## Table of contents
 
