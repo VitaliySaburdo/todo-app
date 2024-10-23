@@ -6,6 +6,7 @@
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
+  - [Install and usage](#install-and-usage)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -27,6 +28,10 @@ Users should be able to:
 - Clear all completed todos
 - Toggle light and dark mode
 - **Bonus**: Drag and drop to reorder items on the list
+
+### Install and usage
+
+Clone this repository to your local machine using git clone https://github.com/VitaliySaburdo/ecommerce-product-page Run npm install to install the dependencies. Run npm run dev to start the development server. Open http://localhost:3000 in your web browser.
 
 ### Screenshot
 
