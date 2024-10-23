@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Install and usage
 
-Clone this repository to your local machine using git clone https://github.com/VitaliySaburdo/ecommerce-product-page Run npm install to install the dependencies. Run npm run dev to start the development server. Open http://localhost:3000 in your web browser.
+Clone this repository to your local machine using git clone https://github.com/VitaliySaburdo/todo-app Run npm install to install the dependencies. Run npm run dev to start the development server. Open http://localhost:3000 in your web browser.
 
 ### Screenshot
 
