@@ -34,7 +34,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({
   };
 
   return (
-    <>
+    <div className={`${style.wrapper} ${style[theme]}`}>
       <Button
         onClick={handleClick}
         isActive={status === 'active'}
@@ -50,6 +50,6 @@ export const TaskItem: React.FC<TaskItemProps> = ({
       <button className={style.btnCross} onClick={handleOnDelete}>
         <Cross />
       </button>
-    </>
+    </div>
   );
 };

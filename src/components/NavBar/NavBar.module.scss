@@ -22,6 +22,9 @@
   &:hover {
     color: $very-dark-grayish-blue;
   }
+  &.dark:hover {
+    color: $light-grayish-blue;
+  }
   &.active.dark {
     color: $bright-blue;
   }
@@ -29,6 +32,6 @@
     color: $bright-blue;
   }
   &.dark {
-    color: $light-grayish-blue;
+    color: $very-dark-grayish-blue;
   }
 }

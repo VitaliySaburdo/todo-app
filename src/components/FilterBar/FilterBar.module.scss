@@ -52,6 +52,9 @@
     color: $bright-blue;
   }
   &.dark {
+    color: $very-dark-grayish-blue;
+  }
+  &.dark:hover {
     color: $light-grayish-blue;
   }
 }
