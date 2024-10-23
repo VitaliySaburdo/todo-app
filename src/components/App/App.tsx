@@ -55,6 +55,10 @@ function App() {
     setTasks(newTasks);
   };
 
+  const onDraggable = (newTasksList: Task[]) => {
+    setTasks(newTasksList);
+  };
+
   return (
     <>
       <main
@@ -74,6 +78,7 @@ function App() {
             <AddTaskInput addTask={createTask} />
             <div className={style.box}>
               <TaskList
+                changeTaskList={onDraggable}
                 tasks={filteredTasks}
                 onDeleteBtn={handleOnDeleteBtn}
                 changeStatus={handleOnChangeStatus}
